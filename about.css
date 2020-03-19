@@ -1,0 +1,140 @@
+#boxa{
+    height: 120px;
+    width: 120px;
+    background-color: darksalmon;
+    box-shadow: 20px 10px 15px rgb(129, 59, 59);
+}
+#boxb{
+    height: 150px;
+    width: 150px;
+    background-color: deeppink;
+    box-shadow: 20px 10px 15px rgb(37, 29, 29);
+}
+
+#boxc{
+    height: 150px;
+    width:150px;
+   background-color: rgb(110, 3, 187);
+    box-shadow: 10px 10px 15px rgb(243, 243, 11);
+}
+.wrapper {
+    margin: 30px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, [col] 100px ) ;
+    grid-template-rows: repeat(3, [row] auto  );
+    background-color: #fff;
+    color: #444;
+}
+
+
+.Box {
+    background-color: ;
+    color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 100%;
+    z-index:20;
+
+}
+
+.a {
+    grid-column: col / span  2;
+    grid-row: row ;
+    display: flex;
+    justify-content: center;
+}
+.b {
+    grid-column: col 3 / span  3;
+    grid-row: row ;
+    display: flex;
+    justify-content: center;
+}
+.c {
+    grid-column: col /span 2 ;
+    grid-row: row 2 ;
+    display: flex;
+    justify-content: center;
+}
+.d {
+    grid-column: col 3/ span 3;
+    grid-row: row 2 ;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(pink , yellow ,orange);
+}
+
+.e {
+    grid-column: col / span 3;
+    grid-row: row 3;
+    display: flex;
+    justify-content: center;
+}
+
+.f {
+    grid-column: col 3/ span 3;
+    grid-row: row 2  ;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(49,121,207, 0.5);
+    background-image: linear-gradient(orange ,yellow ,pink);
+    z-index: 20;
+}
+
+.flex1{
+  border: 10px dotted green;
+  display: flex;
+ flex-wrap: wrap;
+ flex-direction: row-reverse;
+ justify-content: center;
+/* align-items:flex-start;*/
+ padding: 40px;
+}
+
+@keyframes fadeBox{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#boxa{
+    animation-name: fadeBox;
+    animation-duration: 5s;
+    animation-iteration-count: 4s;
+    animation-timing-function:linear ;
+}
+
+@keyframes rotationBox{
+    0%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes movBox{
+    0%{left: 0px; top: 0px;}
+    25%{left :100px; top: 0px;}
+    50%{left: 100px; top: 200px}
+    75%{left: 0px; top: 200px;}
+    100%{left: 0px; top: 0px;}
+}
+#boxb{
+    animation-name: rotationBox;
+    animation-duration: 7s;
+    animation-iteration-count: 5s;
+    animation-timing-function: ease-in-out;
+    background-image: radial-gradient(circle, rgb(3, 46, 3), yellow, orange, rgb(13, 82, 13));
+}
+
+#boxc{
+    position: relative;
+    animation: movBox 3s 5s linear ; 
+}
